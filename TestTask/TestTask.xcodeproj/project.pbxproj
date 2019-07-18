@@ -23,6 +23,10 @@
 		3D3BAD8A22E0E66D000B780E /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3BAD8922E0E66D000B780E /* ToastView.swift */; };
 		3D3BAD8C22E0E6A4000B780E /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3BAD8B22E0E6A4000B780E /* UIFont.swift */; };
 		3D3BAD8E22E0EA16000B780E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3BAD8D22E0EA16000B780E /* UIColor.swift */; };
+		3D3BAD9122E0F0A4000B780E /* GetPhotosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3BAD9022E0F0A4000B780E /* GetPhotosModel.swift */; };
+		3D3BAD9322E0F3AF000B780E /* SearchPhotosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3BAD9222E0F3AF000B780E /* SearchPhotosModel.swift */; };
+		3D3BAD9622E0F65B000B780E /* PhotosApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3BAD9522E0F65B000B780E /* PhotosApi.swift */; };
+		3D3BAD9922E0F8D5000B780E /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3BAD9822E0F8D5000B780E /* AppConfiguration.swift */; };
 		55CDC2617D7568B868D7F341 /* Pods_TestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8566C5D5AD941D19E1B44A /* Pods_TestTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +49,10 @@
 		3D3BAD8922E0E66D000B780E /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		3D3BAD8B22E0E6A4000B780E /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		3D3BAD8D22E0EA16000B780E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		3D3BAD9022E0F0A4000B780E /* GetPhotosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPhotosModel.swift; sourceTree = "<group>"; };
+		3D3BAD9222E0F3AF000B780E /* SearchPhotosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotosModel.swift; sourceTree = "<group>"; };
+		3D3BAD9522E0F65B000B780E /* PhotosApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosApi.swift; sourceTree = "<group>"; };
+		3D3BAD9822E0F8D5000B780E /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		58BD1372DF72C324993E357C /* Pods-TestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTask.debug.xcconfig"; path = "Target Support Files/Pods-TestTask/Pods-TestTask.debug.xcconfig"; sourceTree = "<group>"; };
 		812F6ED001853E8509910691 /* Pods-TestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTask.release.xcconfig"; path = "Target Support Files/Pods-TestTask/Pods-TestTask.release.xcconfig"; sourceTree = "<group>"; };
 		8D8566C5D5AD941D19E1B44A /* Pods_TestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +99,7 @@
 		3D3BAD5D22E0B024000B780E /* TestTask */ = {
 			isa = PBXGroup;
 			children = (
+				3D3BAD9722E0F8B2000B780E /* Configuration */,
 				3D3BAD8722E0E648000B780E /* UI */,
 				3D3BAD7722E0E129000B780E /* Extensions */,
 				3D3BAD7022E0DED9000B780E /* Services */,
@@ -116,8 +125,10 @@
 		3D3BAD7122E0DEE5000B780E /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				3D3BAD7422E0E07F000B780E /* Helper */,
+				3D3BAD9422E0F646000B780E /* Api */,
 				3D3BAD7222E0E006000B780E /* Networking.swift */,
+				3D3BAD8F22E0F05E000B780E /* ApiModels */,
+				3D3BAD7422E0E07F000B780E /* Helper */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -182,6 +193,31 @@
 				3D3BAD8922E0E66D000B780E /* ToastView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3D3BAD8F22E0F05E000B780E /* ApiModels */ = {
+			isa = PBXGroup;
+			children = (
+				3D3BAD9022E0F0A4000B780E /* GetPhotosModel.swift */,
+				3D3BAD9222E0F3AF000B780E /* SearchPhotosModel.swift */,
+			);
+			path = ApiModels;
+			sourceTree = "<group>";
+		};
+		3D3BAD9422E0F646000B780E /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				3D3BAD9522E0F65B000B780E /* PhotosApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		3D3BAD9722E0F8B2000B780E /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3D3BAD9822E0F8D5000B780E /* AppConfiguration.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 		4DA6CFD63213428C9D05EC62 /* Pods */ = {
@@ -309,11 +345,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D3BAD7622E0E092000B780E /* ApiHelper.swift in Sources */,
+				3D3BAD9622E0F65B000B780E /* PhotosApi.swift in Sources */,
 				3D3BAD7C22E0E1E0000B780E /* LoadingIndicatorPlugin.swift in Sources */,
+				3D3BAD9922E0F8D5000B780E /* AppConfiguration.swift in Sources */,
 				3D3BAD7322E0E006000B780E /* Networking.swift in Sources */,
+				3D3BAD9122E0F0A4000B780E /* GetPhotosModel.swift in Sources */,
 				3D3BAD7D22E0E1E0000B780E /* ErrorPlugin.swift in Sources */,
 				3D3BAD7922E0E137000B780E /* String.swift in Sources */,
 				3D3BAD8222E0E48D000B780E /* LoadingViewController.swift in Sources */,
+				3D3BAD9322E0F3AF000B780E /* SearchPhotosModel.swift in Sources */,
 				3D3BAD8A22E0E66D000B780E /* ToastView.swift in Sources */,
 				3D3BAD7F22E0E2C2000B780E /* PhotoApi.swift in Sources */,
 				3D3BAD8C22E0E6A4000B780E /* UIFont.swift in Sources */,
