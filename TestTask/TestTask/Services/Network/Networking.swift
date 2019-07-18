@@ -19,12 +19,13 @@ struct Networking<Target> where Target: Moya.TargetType {
     }
     
     func makeRequest(target: Target,
-                     success: @escaping ApiStringResultClosure,
-                     failure: @escaping ApiFailureClosure) {
-        provider.request(target) { (result) in
-            let (isSuccessfull, str, message) = self.helper.handleResult(result: result)
-            isSuccessfull ? success(str) : failure(message ?? self.helper.defautErrorMessage)
+                     success: @escaping ApiDataResultClosure,
+                     failure: @escaping ApiFailureClosure) -> Cancellable {
+        return provider.request(target) { (result) in
+            let (isSuccessfull, data, message) = self.helper.handleResult(result: result)
+            isSuccessfull ? success(data) : failure(message ?? self.helper.defautErrorMessage)
         }
+        
     }
     
     func makeMappableRequest<T: Mappable>(target: Target,
@@ -46,23 +47,11 @@ struct Networking<Target> where Target: Moya.TargetType {
             isSuccessfull ? success(object) : failure(message ?? self.helper.defautErrorMessage)
         }
     }
-    
-    func makeUploadRequest(target: Target,
-                           success: @escaping ApiStringResultClosure,
-                           failure: @escaping ApiFailureClosure) {
-        provider.request(target) { (result) in
-            let (isSuccessfull, url, message) = self.helper.handleResultToJson(result: result)
-            if let url = url as? [String: Any], isSuccessfull {
-                success(url["result"] as? String)
-            } else {
-                failure(message ?? self.helper.defautErrorMessage)
-            }
-        }
-    }
 
     // MARK: Factory methods
-    static func newDefaultNetworking() -> Networking<Target> {
-        let provider: MoyaProvider<Target> = newProvider()
+    static func newDefaultNetworking(silentMode: Bool = false) -> Networking<Target> {
+        let plugins: [PluginType] = silentMode ? [] : Networking.plugins
+        let provider: MoyaProvider<Target> = newProvider(plugins: plugins)
         return Networking<Target>(provider: provider)
     }
 }
@@ -76,7 +65,7 @@ extension Networking {
         ]
     }
     
-    static fileprivate func newProvider<Target>(plugins: [PluginType] = Networking.plugins,
+    static fileprivate func newProvider<Target>(plugins: [PluginType],
                                                 _ requestClosure: ((Endpoint, @escaping (Result<URLRequest, MoyaError>) -> Void) -> Void)? = nil)
         -> MoyaProvider<Target> {
             if let requestClosure = requestClosure {

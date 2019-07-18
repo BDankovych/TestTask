@@ -8,9 +8,10 @@ import Moya_ObjectMapper
 
 typealias ApiFailureClosure = (String) -> Void
 typealias ApiSuccessClosure = () -> Void
-typealias ApiStringResultClosure = (String?) -> Void
+typealias ApiDataResultClosure = (Data?) -> Void
 typealias ApiMappableResultClosure = (Mappable?) -> Void
 typealias ApiMappableArrayResultClosure = ([Mappable?]?) -> Void
+
 
 struct ApiHelper {
     let defautErrorMessage = "DEFAULT_ERROR_MESSAGE".localized()
@@ -49,21 +50,17 @@ struct ApiHelper {
     }
     
     func handleResult(result: Result<Moya.Response, MoyaError>)
-        -> (Bool, String?, String?) {
+        -> (Bool, Data?, String?) {
             print(result)
             var isSuccessfull = true
-            var object: String?
+            var object: Data?
             var message = ""
             
             switch result {
             case let .success(response):
                 print(response)
                 if response.statusCode >= 200 && response.statusCode <= 300 {
-                    do {
-                        object = try response.mapString()
-                    } catch {
-                        isSuccessfull = false
-                    }
+                    object =  response.data
                 } else {
                     isSuccessfull = false
                     message = mapError(response: response)

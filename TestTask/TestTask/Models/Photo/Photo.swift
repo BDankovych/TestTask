@@ -1,6 +1,7 @@
 
 
 import ObjectMapper
+import UIKit
 
 class PhotoUrls: Mappable {
     
@@ -45,6 +46,7 @@ class Photo: Mappable {
     var altDescription: String?
     var urls: PhotoUrls?
     
+    var image: UIImage?
     
     private enum JSONKeys: String {
         case id
