@@ -6,7 +6,6 @@ enum PhotosApi {
     case searchPhotos(SearchPhotosModel)
 }
 
-
 extension PhotosApi: TargetType {
     
     var baseURL: URL {
