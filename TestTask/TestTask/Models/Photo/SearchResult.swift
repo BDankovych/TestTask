@@ -11,7 +11,7 @@ class SearchResult: Mappable {
     
     private enum JSONKeys: String {
         case total
-        case totalPages
+        case totalPages = "total_pages"
         case results
     }
     

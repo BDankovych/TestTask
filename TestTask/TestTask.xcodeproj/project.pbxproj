@@ -14,6 +14,8 @@
 		3D1F544522E26BA900DF5F3B /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F544422E26BA900DF5F3B /* ImageViewController.swift */; };
 		3D1F544822E271B300DF5F3B /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F544722E271B300DF5F3B /* ImageScrollView.swift */; };
 		3D1F544A22E27EAF00DF5F3B /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F544922E27EAF00DF5F3B /* PhotoDetailsViewController.swift */; };
+		3D1F544D22E2983100DF5F3B /* PhotoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F544C22E2983100DF5F3B /* PhotoGridView.swift */; };
+		3D1F544F22E2984500DF5F3B /* PhotoGridView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1F544E22E2984500DF5F3B /* PhotoGridView.xib */; };
 		3D3BAD5F22E0B024000B780E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3BAD5E22E0B024000B780E /* AppDelegate.swift */; };
 		3D3BAD6122E0B024000B780E /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3BAD6022E0B024000B780E /* PhotoViewController.swift */; };
 		3D3BAD6422E0B024000B780E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D3BAD6222E0B024000B780E /* Main.storyboard */; };
@@ -54,6 +56,8 @@
 		3D1F544422E26BA900DF5F3B /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		3D1F544722E271B300DF5F3B /* ImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
 		3D1F544922E27EAF00DF5F3B /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
+		3D1F544C22E2983100DF5F3B /* PhotoGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridView.swift; sourceTree = "<group>"; };
+		3D1F544E22E2984500DF5F3B /* PhotoGridView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoGridView.xib; sourceTree = "<group>"; };
 		3D3BAD5B22E0B024000B780E /* TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D3BAD5E22E0B024000B780E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D3BAD6022E0B024000B780E /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,15 @@
 				3D1F544722E271B300DF5F3B /* ImageScrollView.swift */,
 			);
 			path = ImageScrollView;
+			sourceTree = "<group>";
+		};
+		3D1F544B22E297FF00DF5F3B /* PhotoGridView */ = {
+			isa = PBXGroup;
+			children = (
+				3D1F544C22E2983100DF5F3B /* PhotoGridView.swift */,
+				3D1F544E22E2984500DF5F3B /* PhotoGridView.xib */,
+			);
+			path = PhotoGridView;
 			sourceTree = "<group>";
 		};
 		3D3BAD5222E0B024000B780E = {
@@ -253,6 +266,7 @@
 		3D3BAD8822E0E655000B780E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3D1F544B22E297FF00DF5F3B /* PhotoGridView */,
 				3D1F544622E271A200DF5F3B /* ImageScrollView */,
 				3D1F543C22E2291B00DF5F3B /* SegmentedControl */,
 				3D1F543722E2271C00DF5F3B /* Base */,
@@ -291,8 +305,8 @@
 		3D3BAD9A22E0FA70000B780E /* Photos */ = {
 			isa = PBXGroup;
 			children = (
-				3D3BAD6022E0B024000B780E /* PhotoViewController.swift */,
 				3D3BAD6222E0B024000B780E /* Main.storyboard */,
+				3D3BAD6022E0B024000B780E /* PhotoViewController.swift */,
 				3D1F544422E26BA900DF5F3B /* ImageViewController.swift */,
 				3D1F544922E27EAF00DF5F3B /* PhotoDetailsViewController.swift */,
 			);
@@ -404,6 +418,7 @@
 				3D3BAD6922E0B026000B780E /* LaunchScreen.storyboard in Resources */,
 				3D3BAD6622E0B026000B780E /* Assets.xcassets in Resources */,
 				3D1F544022E2297000DF5F3B /* SegmentedControl.xib in Resources */,
+				3D1F544F22E2984500DF5F3B /* PhotoGridView.xib in Resources */,
 				3D46868A22E12086006CF2C0 /* PhotoAlbumCollectionViewCell.xib in Resources */,
 				3D3BAD6422E0B024000B780E /* Main.storyboard in Resources */,
 			);
@@ -483,6 +498,7 @@
 				3D3BAD8C22E0E6A4000B780E /* UIFont.swift in Sources */,
 				3D46869022E121FB006CF2C0 /* UIView.swift in Sources */,
 				3D46869222E12A6D006CF2C0 /* FileServiceApi.swift in Sources */,
+				3D1F544D22E2983100DF5F3B /* PhotoGridView.swift in Sources */,
 				3D3BAD8E22E0EA16000B780E /* UIColor.swift in Sources */,
 				3D3BAD6122E0B024000B780E /* PhotoViewController.swift in Sources */,
 				3D3BAD5F22E0B024000B780E /* AppDelegate.swift in Sources */,

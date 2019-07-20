@@ -9,9 +9,6 @@ final class ErrorAlertService {
     }
     
     func process(error: String) {
-//        guard let string = error.details?.errorKey?.localized() else {
-//            return
-//        }
         present(with: error)
     }
     

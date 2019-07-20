@@ -5,7 +5,6 @@ class ToastView: UIView {
     fileprivate lazy var label: UILabel = {
         let label = UILabel()
         
-        label.font = UIFont.lato( .Regular, size: 17)
         label.textColor = .white
         label.numberOfLines = 0
         label.textAlignment = .center
