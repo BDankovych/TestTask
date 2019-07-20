@@ -5,20 +5,20 @@ import UIKit
 class PhotoViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var segmentControl: SegmentedControl!
     
     let provider = Networking<PhotosApi>.newDefaultNetworking()
-    
     var photos = [Photo]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        setupSegmantedControl()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    private func loadPhotos() {
         provider.makeMappableArrayRequest(target: .getPhotos(photoModel()), resultType: Photo.self, success: { (result) in
-            
             self.photos = result ?? []
             self.collectionView.reloadData()
         }) { (error) in
@@ -26,6 +26,12 @@ class PhotoViewController: UIViewController {
         }
     }
 
+    private func setupSegmantedControl() {
+        segmentControl.elements = Array<Int>(1...30).map{String($0)}
+        segmentControl.delegate = self
+        segmentControl.selectedIndex =  0
+    }
+    
     private func configureView() {
         collectionView.register(PhotoAlbumCollectionViewCell.self)
         collectionView.delegate = self
@@ -33,10 +39,21 @@ class PhotoViewController: UIViewController {
     }
     
     private func photoModel() -> GetPhotosModel {
-        let model = GetPhotosModel(page: 1, photosPerPage: 30)
+        print(segmentControl.selectedIndex)
+        let model = GetPhotosModel(page: segmentControl.selectedIndex ?? 0 + 1, photosPerPage: 30)
         return model
     }
 
+}
+
+extension PhotoViewController: SegmentedControlDelegate {
+    func segmentedControlValueChanged(control: SegmentedControl) {
+        PhotoDownloadService.shared.calcelAllTask()
+        collectionView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+        photos = []
+        collectionView.reloadData()
+        loadPhotos()
+    }
 }
 
 extension PhotoViewController: UICollectionViewDelegateFlowLayout {
@@ -51,7 +68,16 @@ extension PhotoViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension PhotoViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let photo = photos[safe: indexPath.item],
+            let img = photo.image,
+            let vc = storyboard?.instantiateViewController(withIdentifier: ImageViewController.identifier) as? ImageViewController else {
+                return
+        }
+        
+        vc.photo = photo
+        present(vc, animated: true)  
+    }
 }
 
 extension PhotoViewController: UICollectionViewDataSource {
@@ -62,8 +88,10 @@ extension PhotoViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueCell(PhotoAlbumCollectionViewCell.self, indexPath: indexPath)
-        cell.setupDefaultActivity()
-        
+//        cell.setupDefaultActivity()
+        let photo = photos[indexPath.item]
+//        cell.configure(with: photo)
+        cell.imageUrl = photo.urls?.full ?? ""
         return cell
     }
     
@@ -79,11 +107,9 @@ extension PhotoViewController: UICollectionViewDataSource {
             return
         }
         
-        let photo = photos[forItemAt.item]
-        if let imageUrl = photo.urls?.full {
+        
+        if let photo = photos[safe: forItemAt.item], let imageUrl = photo.urls?.full {
             PhotoDownloadService.shared.cancelDownload(url:imageUrl)
         }
     }
-    
-    
 }

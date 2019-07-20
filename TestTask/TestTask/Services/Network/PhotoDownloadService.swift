@@ -23,11 +23,12 @@ class PhotoDownloadService {
     func cancelDownload(url: String) {
         DispatchQueue.main.async {
             self.tasks[url]?.cancel()
-            if self.tasks.removeValue(forKey: url) != nil {
-                print("\(#function) task canceled: \(url)")
-            }
         }
     }
     
-    
+    func calcelAllTask() {
+        DispatchQueue.main.async {
+            self.tasks.forEach{ $0.value.cancel() }
+        }
+    }
 }
