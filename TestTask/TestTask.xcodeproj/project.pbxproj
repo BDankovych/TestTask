@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D0242E422E73FAC00093C16 /* PhotoAlbumCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D0242E222E73FAC00093C16 /* PhotoAlbumCollectionViewCell.xib */; };
-		3D0242E522E73FAC00093C16 /* PhotoAlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0242E322E73FAC00093C16 /* PhotoAlbumCollectionViewCell.swift */; };
+		3D0242E922E740D200093C16 /* PhotoAlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0242E722E740D100093C16 /* PhotoAlbumCollectionViewCell.swift */; };
+		3D0242EA22E740D200093C16 /* PhotoAlbumCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D0242E822E740D100093C16 /* PhotoAlbumCollectionViewCell.xib */; };
 		3D1F543922E2272900DF5F3B /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F543822E2272900DF5F3B /* BaseView.swift */; };
 		3D1F543F22E2297000DF5F3B /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F543D22E2297000DF5F3B /* SegmentedControl.swift */; };
 		3D1F544022E2297000DF5F3B /* SegmentedControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1F543E22E2297000DF5F3B /* SegmentedControl.xib */; };
@@ -49,8 +49,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3D0242E222E73FAC00093C16 /* PhotoAlbumCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoAlbumCollectionViewCell.xib; sourceTree = "<group>"; };
-		3D0242E322E73FAC00093C16 /* PhotoAlbumCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		3D0242E722E740D100093C16 /* PhotoAlbumCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		3D0242E822E740D100093C16 /* PhotoAlbumCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoAlbumCollectionViewCell.xib; sourceTree = "<group>"; };
 		3D1F543822E2272900DF5F3B /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		3D1F543D22E2297000DF5F3B /* SegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		3D1F543E22E2297000DF5F3B /* SegmentedControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentedControl.xib; sourceTree = "<group>"; };
@@ -112,6 +112,15 @@
 				8D8566C5D5AD941D19E1B44A /* Pods_TestTask.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3D0242E622E740D100093C16 /* PhotoAlbumCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3D0242E722E740D100093C16 /* PhotoAlbumCollectionViewCell.swift */,
+				3D0242E822E740D100093C16 /* PhotoAlbumCollectionViewCell.xib */,
+			);
+			path = PhotoAlbumCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		3D1F543722E2271C00DF5F3B /* Base */ = {
@@ -266,11 +275,11 @@
 		3D3BAD8822E0E655000B780E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3D0242E622E740D100093C16 /* PhotoAlbumCollectionViewCell */,
 				3D1F544B22E297FF00DF5F3B /* PhotoGridView */,
 				3D1F544622E271A200DF5F3B /* ImageScrollView */,
 				3D1F543C22E2291B00DF5F3B /* SegmentedControl */,
 				3D1F543722E2271C00DF5F3B /* Base */,
-				3D46868622E12086006CF2C0 /* PhotoAlbumCollectionViewCell */,
 				3D3BAD8922E0E66D000B780E /* ToastView.swift */,
 			);
 			path = View;
@@ -335,15 +344,6 @@
 				3D46868022E11066006CF2C0 /* SearchResult.swift */,
 			);
 			path = Photo;
-			sourceTree = "<group>";
-		};
-		3D46868622E12086006CF2C0 /* PhotoAlbumCollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				3D0242E322E73FAC00093C16 /* PhotoAlbumCollectionViewCell.swift */,
-				3D0242E222E73FAC00093C16 /* PhotoAlbumCollectionViewCell.xib */,
-			);
-			path = PhotoAlbumCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		4DA6CFD63213428C9D05EC62 /* Pods */ = {
@@ -415,7 +415,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D0242E422E73FAC00093C16 /* PhotoAlbumCollectionViewCell.xib in Resources */,
+				3D0242EA22E740D200093C16 /* PhotoAlbumCollectionViewCell.xib in Resources */,
 				3D3BAD6922E0B026000B780E /* LaunchScreen.storyboard in Resources */,
 				3D3BAD6622E0B026000B780E /* Assets.xcassets in Resources */,
 				3D1F544022E2297000DF5F3B /* SegmentedControl.xib in Resources */,
@@ -500,7 +500,7 @@
 				3D1F544D22E2983100DF5F3B /* PhotoGridView.swift in Sources */,
 				3D3BAD8E22E0EA16000B780E /* UIColor.swift in Sources */,
 				3D3BAD6122E0B024000B780E /* PhotoViewController.swift in Sources */,
-				3D0242E522E73FAC00093C16 /* PhotoAlbumCollectionViewCell.swift in Sources */,
+				3D0242E922E740D200093C16 /* PhotoAlbumCollectionViewCell.swift in Sources */,
 				3D3BAD5F22E0B024000B780E /* AppDelegate.swift in Sources */,
 				3D1F544822E271B300DF5F3B /* ImageScrollView.swift in Sources */,
 				3D3BAD8622E0E5FB000B780E /* ErrorAlertService.swift in Sources */,
