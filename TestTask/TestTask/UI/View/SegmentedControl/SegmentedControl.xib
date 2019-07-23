@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SegmentedControl" customModule="TestTask" customModuleProvider="target">
+            <connections>
+                <outlet property="leftArrow" destination="NI6-FZ-pDJ" id="Iar-uL-eKa"/>
+                <outlet property="rightArrow" destination="aaI-ik-ybt" id="COb-rH-0qc"/>
+                <outlet property="scrollView" destination="2fh-Ft-bgg" id="QBn-XN-kUl"/>
+                <outlet property="stackView" destination="5ci-Lc-9Dz" id="DhD-EF-haQ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="custom segmented control">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fh-Ft-bgg" userLabel="scroll view">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5ci-Lc-9Dz">
+                            <rect key="frame" x="87" y="4" width="200" height="110"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="5ci-Lc-9Dz" firstAttribute="leading" secondItem="2fh-Ft-bgg" secondAttribute="leading" id="Bng-oB-jzN"/>
+                        <constraint firstAttribute="bottom" secondItem="5ci-Lc-9Dz" secondAttribute="bottom" id="T20-Gy-hkw"/>
+                        <constraint firstAttribute="trailing" secondItem="5ci-Lc-9Dz" secondAttribute="trailing" id="Y5z-bP-w0F"/>
+                        <constraint firstItem="5ci-Lc-9Dz" firstAttribute="top" secondItem="2fh-Ft-bgg" secondAttribute="top" id="wSk-a9-goZ"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="C2O-VT-Qib"/>
+                    </connections>
+                </scrollView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowLeft" translatesAutoresizingMaskIntoConstraints="NO" id="NI6-FZ-pDJ">
+                    <rect key="frame" x="0.0" y="44.5" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="NI6-FZ-pDJ" secondAttribute="height" multiplier="1:1" id="k5U-k6-LVH"/>
+                    </constraints>
+                </imageView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowRight" translatesAutoresizingMaskIntoConstraints="NO" id="aaI-ik-ybt">
+                    <rect key="frame" x="345.5" y="44.5" width="29.5" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="aaI-ik-ybt" secondAttribute="height" multiplier="1:1" id="6tl-vH-76i"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="2fh-Ft-bgg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0Gu-UV-OUY"/>
+                <constraint firstItem="NI6-FZ-pDJ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Mgg-rx-KOj"/>
+                <constraint firstItem="aaI-ik-ybt" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="P4d-20-O3C"/>
+                <constraint firstItem="2fh-Ft-bgg" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="QsQ-ET-8cN"/>
+                <constraint firstItem="NI6-FZ-pDJ" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="1/4" id="Ucv-0r-aMh"/>
+                <constraint firstItem="2fh-Ft-bgg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="UjE-Rr-RI6"/>
+                <constraint firstItem="NI6-FZ-pDJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WD5-4R-NVD"/>
+                <constraint firstItem="aaI-ik-ybt" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="1/4" id="df7-pw-r8d"/>
+                <constraint firstAttribute="bottom" secondItem="2fh-Ft-bgg" secondAttribute="bottom" id="eDc-3f-Ans"/>
+                <constraint firstAttribute="trailing" secondItem="aaI-ik-ybt" secondAttribute="trailing" id="f3d-vb-EdG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="26.399999999999999" y="-225.33733133433284"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrowLeft" width="9" height="15"/>
+        <image name="arrowRight" width="9" height="15"/>
+    </resources>
+</document>
